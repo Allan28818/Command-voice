@@ -1,6 +1,5 @@
 const btn = document.querySelector('.talk');
 const content = document.querySelector('.content');
-const input = document.getElementById('allan');
 
 const greetings = [
   'E aí Dev!', 
@@ -64,4 +63,3 @@ function readOutLoudAText(textToRead)
    .speechSynthesis
    .speak(textToRead);
 }
-
