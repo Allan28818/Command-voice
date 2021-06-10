@@ -10,6 +10,10 @@ body {
   background: #4b4b4b;
 }
 
+.hidden {
+  display: none;
+}
+
 .header-title {
   width: 100%;
   min-height: 4.375rem;
@@ -28,11 +32,44 @@ body {
   background: #7d5fff;
 }
 
+.header-title .menu {
+  width: 1.5rem;
+  height: 2rem;
+  position: absolute;
+  top: 4%;
+  left: 7%;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.header-title .menu div {
+  height: 0;
+  width: 100%;
+  border: 0.09375rem solid #fff;
+  border-radius: 0.625rem;
+  background-color: #fff;
+  -webkit-transform-origin: 0.0625rem;
+          transform-origin: 0.0625rem;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  margin: 0.125rem;
+}
+
 .header-title h1 {
   font-size: 1.875rem;
   color: #fff;
   font-family: "Baloo", sans-serif;
   cursor: default;
+}
+
+.menu-opened {
+  width: 18.75rem;
+  height: 31.25rem;
+  background: #4b4b4b;
+  border: 1px solid #fff;
+  border-radius: 1.25rem;
+  position: absolute;
+  left: 1%;
 }
 
 .conversation-elements {

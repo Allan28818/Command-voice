@@ -24,8 +24,14 @@
   </head>
   <body>
     <nav class="header-title">
+      <div class="menu">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <h1 id="page title">Command voice</h1>
     </nav>
+    <div class="menu-opened hidden"></div>
 
     <section class="conversation-elements">
       <div class="wrapper">
@@ -34,6 +40,7 @@
           class="save-conversation checkbox"
           id="check"
           name="save-input"
+          checked
         />
         <label for="check">Save conversation?</label>
       </div>
@@ -49,6 +56,7 @@
       <div class="conversation"></div>
     </section>
 
+    <script src="./controllers/animateHTML.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

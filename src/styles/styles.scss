@@ -11,6 +11,10 @@ body {
   background: #4b4b4b;
 }
 
+.hidden {
+  display: none;
+}
+
 .header-title {
   width: 100%;
   min-height: convertToRem(70rem);
@@ -22,12 +26,43 @@ body {
   align-items: center;
   background: #7d5fff;
 
+  .menu {
+    width: 1.5rem;
+    height: 2rem;
+    position: absolute;
+    top: 4%;
+    left: 7%;
+    z-index: 3;
+    cursor: pointer;
+
+    div {
+      height: 0;
+      width: 100%;
+      border: convertToRem(1.5rem) solid #fff;
+      border-radius: convertToRem(10rem);
+      background-color: #fff;
+      transform-origin: convertToRem(1rem);
+      transition: all 0.3s linear;
+      margin: convertToRem(2rem);
+    }
+  }
+
   h1 {
     font-size: convertToRem(30rem);
     color: #fff;
     font-family: "Baloo", sans-serif;
     cursor: default;
   }
+}
+
+.menu-opened {
+  width: convertToRem(300rem);
+  height: convertToRem(500rem);
+  background: #4b4b4b;
+  border: 1px solid #fff;
+  border-radius: convertToRem(20rem);
+  position: absolute;
+  left: 1%;
 }
 
 .conversation-elements {
