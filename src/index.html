@@ -23,9 +23,45 @@
     <title>Command Voice | By Allan Julie</title>
   </head>
   <body>
+    <div class="confirm-delete hidden">
+      <div class="card">
+        <h2>Excluir</h2>
+        <img
+          class="trash-can-img"
+          src="/src/assets/trash-can.png"
+          alt="Lixeira - excluir"
+        />
+        <p>Tem certeza que deseja excluir suas conversas?</p>
+        <ul>
+          <li><button class="delete">Excluir</button></li>
+          <li><button class="cancel">Cancelar</button></li>
+        </ul>
+      </div>
+    </div>
     <nav class="header-title">
+      <div class="menu">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <h1 id="page title">Command voice</h1>
     </nav>
+    <div class="menu-opened hidden">
+      <h3>Command voice</h3>
+      <hr />
+      <div class="clean-storage">
+        <i class="fas fa-trash-alt"></i>
+        <p>Limpar conversa</p>
+      </div>
+      <div class="github">
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/Allan28818/Command-voice">Github</a>
+      </div>
+      <div class="linkedin">
+        <i class="fab fa-linkedin"></i>
+        <a href="">Linkedin</a>
+      </div>
+    </div>
 
     <section class="conversation-elements">
       <div class="wrapper">
@@ -34,6 +70,7 @@
           class="save-conversation checkbox"
           id="check"
           name="save-input"
+          checked
         />
         <label for="check">Save conversation?</label>
       </div>
@@ -45,10 +82,11 @@
         <span class="tooltip-text">Click to talk</span>
       </div>
 
-      <h3 class="content"></h3>
       <div class="conversation"></div>
     </section>
 
+    <script src="./services/deleteConversation.js"></script>
+    <script src="./controllers/animateHTML.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

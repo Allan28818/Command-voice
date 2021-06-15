@@ -1,0 +1,3 @@
+const conversationData = [];
+
+export { conversationData };
