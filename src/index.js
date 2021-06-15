@@ -1,11 +1,14 @@
-import { generateAnHTMLElement } from "./controllers/generateHTMLController";
 import generateTime from "./controllers/generateTimeController";
+import { generateAnHTMLElement } from "./controllers/generateHTMLController";
 import { listHTMLElements } from "./controllers/listHTMLElements";
-import { saveConversation } from "./controllers/saveConversation";
+import { toggleClassNameByElement } from "./controllers/animateHTML";
+
+import { saveConversation } from "./services/saveConversation";
+
 import MessageConfiguration from "./utils/messageConfiguration";
 
-const btn = document.querySelector(".talk");
-const content = document.querySelector(".content");
+const buttonToTalk = document.querySelector("#talk-btn");
+const content = document.querySelector(".conversation");
 const checkboxToSave = document.querySelector(".save-conversation");
 
 const greetings = ["E aí Dev!", "Olá como está?", "E aí tudo bem!"];
@@ -19,6 +22,7 @@ listHTMLElements(content);
 
 voiceRecognition.onstart = () => {
   console.log("voice is activated, you can microphonee");
+  toggleClassNameByElement([buttonToTalk], ["talking"]);
 };
 
 voiceRecognition.onresult = (event) => {
@@ -32,14 +36,14 @@ voiceRecognition.onresult = (event) => {
 
   const myMessage = generateAnHTMLElement(messageConfiguration);
 
-  saveConversation(messageConfiguration, checkboxToSave);
-
+  toggleClassNameByElement([buttonToTalk], ["talking"]);
   content.appendChild(myMessage);
 
+  saveConversation(messageConfiguration, checkboxToSave);
   configureAndUseTheVoiceBasedInAMessage(voiceResultInAText);
 };
 
-btn.addEventListener("click", () => {
+buttonToTalk.addEventListener("click", () => {
   voiceRecognition.start();
 });
 
@@ -48,24 +52,26 @@ function configureAndUseTheVoiceBasedInAMessage(message) {
 
   if (message.includes("Olá")) {
     const finalText = greetings[Math.floor(Math.random() * greetings.length)];
-    const messageConfiguration = new MessageConfiguration();
+    let messageConfiguration = new MessageConfiguration();
+    messageConfiguration.className = "robot-message";
     messageConfiguration.childs[0].textContent = finalText;
     messageConfiguration.childs[1].textContent = generateTime();
-    const myMessage = generateAnHTMLElement(messageConfiguration);
+    const robotMessage = generateAnHTMLElement(messageConfiguration);
 
-    content.appendChild(myMessage);
+    content.appendChild(robotMessage);
 
     saveConversation(messageConfiguration, checkboxToSave);
 
     voiceConfiguration.text = finalText;
   } else {
-    const messageConfiguration = new MessageConfiguration();
+    let messageConfiguration = new MessageConfiguration();
     const finalText = "Eu não sei o que você disse";
+    messageConfiguration.className = "robot-message";
     messageConfiguration.childs[0].textContent = finalText;
     messageConfiguration.childs[1].textContent = generateTime();
-    const myMessage = generateAnHTMLElement(messageConfiguration);
+    const robotMessage = generateAnHTMLElement(messageConfiguration);
 
-    content.appendChild(myMessage);
+    content.appendChild(robotMessage);
 
     saveConversation(messageConfiguration, checkboxToSave);
 

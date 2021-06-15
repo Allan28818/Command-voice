@@ -40,6 +40,8 @@ body {
   left: 7%;
   z-index: 3;
   cursor: pointer;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
 }
 
 .header-title .menu div {
@@ -55,6 +57,26 @@ body {
   margin: 0.125rem;
 }
 
+.header-title .menu.close:hover {
+  opacity: 0.5;
+}
+
+.header-title .menu.close div:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.header-title .menu.close div:nth-child(2) {
+  margin-left: -100%;
+  opacity: 0;
+}
+
+.header-title .menu.close div:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 0.40625rem;
+}
+
 .header-title h1 {
   font-size: 1.875rem;
   color: #fff;
@@ -62,14 +84,328 @@ body {
   cursor: default;
 }
 
+.confirm-delete {
+  width: 100vw;
+  height: 100vh;
+  background: #00000094;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  z-index: 5;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.confirm-delete .card {
+  width: 23.125rem;
+  height: 16.875rem;
+  background: #777676e8;
+  border-radius: 1.25rem;
+  padding: 0.625rem;
+}
+
+.confirm-delete .card h2 {
+  font-size: 1.875rem;
+  color: #f7f4f4;
+  font-family: "Popins", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: default;
+}
+
+.confirm-delete .card .trash-can-img {
+  width: 4.375rem;
+  height: 4.375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  margin-top: 1.875rem;
+  margin-bottom: 1.25rem;
+}
+
+.confirm-delete .card p {
+  font-size: 0.875rem;
+  color: #e4e3e3;
+  font-family: "Popins", sans-serif;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: default;
+  padding: 0.625rem;
+}
+
+.confirm-delete .card ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.confirm-delete .card ul li {
+  margin: 0.625rem;
+}
+
+.confirm-delete .card ul li button {
+  width: 6.25rem;
+  max-width: 120rem;
+  height: 1.875rem;
+  border: none;
+  border-radius: 3.125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.25rem;
+  font-size: 0.875rem;
+  font-family: "Baloo", sans-serif;
+  text-transform: uppercase;
+  font-weight: bolder;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.confirm-delete .card ul li .delete {
+  background: #ff2424;
+  color: #fff;
+}
+
+.confirm-delete .card ul li .delete:hover {
+  border: 1px solid #ff2424;
+  color: #ff2424;
+  background: #ffffff71;
+  -webkit-box-shadow: 0 0 20px 5px #00000062;
+          box-shadow: 0 0 20px 5px #00000062;
+}
+
+.confirm-delete .card ul li .cancel {
+  background: #000000bb;
+  color: #fff;
+}
+
+.confirm-delete .card ul li .cancel:hover {
+  background: #04920b;
+  -webkit-box-shadow: 0 0 20px 5px #00000062;
+          box-shadow: 0 0 20px 5px #00000062;
+}
+
+.confirm-delete.hidden {
+  display: none;
+}
+
 .menu-opened {
   width: 18.75rem;
   height: 31.25rem;
-  background: #4b4b4b;
+  background: #757474;
   border: 1px solid #fff;
   border-radius: 1.25rem;
   position: absolute;
   left: 1%;
+  padding: 1.25rem;
+}
+
+.menu-opened h3 {
+  font-size: 1.25rem;
+  font-family: "Baloo", sans-serif;
+  color: #fafafa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: default;
+}
+
+.menu-opened .clean-storage {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu-opened .clean-storage p {
+  visibility: visible;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu-opened .clean-storage .fas.fa-trash-alt {
+  color: #fff;
+  width: 3.125rem;
+  height: 3.125rem;
+  display: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu-opened .clean-storage:hover {
+  background: #ff000085;
+}
+
+.menu-opened .clean-storage:hover p {
+  display: none;
+}
+
+.menu-opened .clean-storage:hover .fas.fa-trash-alt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-opened .github {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu-opened .github a {
+  visibility: visible;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu-opened .github .fab.fa-github {
+  color: #fff;
+  width: 6.25rem;
+  height: 6.25rem;
+  display: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu-opened .github:hover {
+  background: #2bff0085;
+}
+
+.menu-opened .github:hover a {
+  display: none;
+}
+
+.menu-opened .github:hover .fab.fa-github {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-opened .linkedin {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu-opened .linkedin a {
+  visibility: visible;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu-opened .linkedin .fab.fa-linkedin {
+  color: #fff;
+  width: 6.25rem;
+  height: 6.25rem;
+  display: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu-opened .linkedin:hover {
+  background: #0011ff85;
+}
+
+.menu-opened .linkedin:hover a {
+  display: none;
+}
+
+.menu-opened .linkedin:hover .fab.fa-linkedin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-opened div {
+  width: 100%;
+  height: 3.125rem;
+  border-radius: 1.25rem;
+  background: #4b4b4bbb;
+  border: 1px solid #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1.25rem;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.menu-opened div p,
+.menu-opened div a {
+  font-size: 1rem;
+  font-family: "Popins", "Baloo", sans-serif;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 
 .conversation-elements {
@@ -178,8 +514,6 @@ body {
 }
 
 .conversation-elements .tooltip-button .talk .fas.fa-microphone-alt {
-  width: 6.25rem;
-  height: 6.25rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -198,6 +532,29 @@ body {
 
 .conversation-elements .tooltip-button .talk:active {
   background: #540b79;
+}
+
+.conversation-elements .tooltip-button .talk.talking {
+  -webkit-animation: "pulse" 0.7s infinite;
+          animation: "pulse" 0.7s infinite;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
 }
 
 .conversation-elements .tooltip-button .tooltip-text {
@@ -228,5 +585,48 @@ body {
 
 .conversation-elements .tooltip-button:hover .tooltip-text {
   opacity: 1;
+}
+
+.conversation-elements .conversation .my-message,
+.conversation-elements .conversation .robot-message {
+  width: converToRem(100rem);
+  min-width: 3.125rem;
+  height: auto;
+  padding: 0.625rem;
+  padding-left: 1.25rem;
+  border-radius: 1.5625rem;
+  font-size: medium;
+  color: #fff;
+  font-family: "Popins", sans-serif;
+  cursor: default;
+  margin-top: 0.625rem;
+}
+
+.conversation-elements .conversation .my-message .time,
+.conversation-elements .conversation .robot-message .time {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: bolder;
+  margin-top: 0.3125rem;
+  color: #e6e6e6;
+}
+
+.conversation-elements .conversation .my-message {
+  background: #2b2bf38e;
+  margin-left: 1.25rem;
+}
+
+.conversation-elements .conversation .my-message::before {
+  content: "You";
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bolder;
+  display: block;
+  margin-bottom: 0.625rem;
+}
+
+.conversation-elements .conversation .robot-message {
+  background: #303030d7;
+  margin-right: 1.25rem;
 }
 /*# sourceMappingURL=styles.css.map */
