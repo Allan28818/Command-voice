@@ -229,13 +229,16 @@ body {
     }
   }
 
-  .github {
+  a {
+    visibility: visible;
     transition: all 0.3s;
-    a {
-      visibility: visible;
+    text-decoration: none;
+    .linkedin,
+    .github {
       transition: all 0.3s;
     }
 
+    .fab.fa-linkedin,
     .fab.fa-github {
       color: #fff;
       width: convertToRem(100rem);
@@ -245,38 +248,19 @@ body {
     }
 
     &:hover {
-      background: #2bff0085;
-      a {
+      .github {
+        background: #2bff0085;
+      }
+
+      .linkedin {
+        background: #0011ff85;
+      }
+
+      p {
         display: none;
       }
+      .fab.fa-linkedin,
       .fab.fa-github {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-  }
-  .linkedin {
-    transition: all 0.3s;
-    a {
-      visibility: visible;
-      transition: all 0.3s;
-    }
-
-    .fab.fa-linkedin {
-      color: #fff;
-      width: convertToRem(100rem);
-      height: convertToRem(100rem);
-      display: none;
-      transition: all 0.3s;
-    }
-
-    &:hover {
-      background: #0011ff85;
-      a {
-        display: none;
-      }
-      .fab.fa-linkedin {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -311,7 +295,8 @@ body {
 
 .conversation-elements {
   width: convertToRem(500rem);
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   display: block;
   justify-content: center;
   background: #a8a8a8ad;
@@ -445,7 +430,8 @@ body {
 
   .conversation {
     .my-message,
-    .robot-message {
+    .robot-message,
+    .weather-message {
       width: converToRem(100rem);
       min-width: convertToRem(50rem);
       height: auto;
@@ -484,6 +470,65 @@ body {
     .robot-message {
       background: #303030d7;
       margin-right: convertToRem(20rem);
+    }
+
+    .weather-message {
+      background: #0a5369d7;
+      margin-right: convertToRem(20rem);
+      .image-weather {
+        min-width: convertToRem(40rem);
+        min-height: convertToRem(40rem);
+        max-width: convertToRem(80rem);
+        max-height: convertToRem(80rem);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+      }
+
+      .weather-status {
+        font-size: convertToRem(20rem);
+        color: #bdc3c7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: convertToRem(20rem);
+      }
+
+      .humidity {
+        font-size: converToRem(14rem);
+        color: #7ed6df;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+      }
+
+      .temperature {
+        font-size: convertToRem(14rem);
+        color: #f6e58d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        padding: convertToRem(20rem);
+      }
+
+      .feelsLike,
+      .windSpeed,
+      .cloudsLevel {
+        font-size: convertToRem(18rem);
+        color: #fafafa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: converToRem(2.5rem);
+      }
+
+      .cloudsLevel {
+        margin-bottom: convertToRem(5rem);
+      }
     }
   }
 }

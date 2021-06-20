@@ -1,22 +1,20 @@
 import generateTime from "./controllers/generateTimeController";
-import { generateAnHTMLElement } from "./controllers/generateHTMLController";
-import { listHTMLElements } from "./controllers/listHTMLElements";
-import { toggleClassNameByElement } from "./controllers/animateHTML";
+import { generateAnHTMLElement } from "./controllers/html-templates/generateHTMLController";
+import { listHTMLElements } from "./controllers/html-templates/listHTMLElements";
+import { toggleClassNameByElement } from "./controllers/html-templates/animateHTML";
+import readOutLoudAText from "./controllers/readText";
 
 import { saveConversation } from "./services/saveConversation";
 
 import MessageConfiguration from "./utils/messageConfiguration";
+import structureWeatherMessage from "./controllers/weatherController";
 
 const buttonToTalk = document.querySelector("#talk-btn");
 const content = document.querySelector(".conversation");
 const checkboxToSave = document.querySelector(".save-conversation");
 
 const greetings = ["E aí Dev!", "Olá como está?", "E aí tudo bem!"];
-
-const selectedSpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition;
-
-const voiceRecognition = new selectedSpeechRecognition();
+import { voiceRecognition } from "./utils/voiceConfiguration";
 
 listHTMLElements(content);
 
@@ -63,6 +61,8 @@ function configureAndUseTheVoiceBasedInAMessage(message) {
     saveConversation(messageConfiguration, checkboxToSave);
 
     voiceConfiguration.text = finalText;
+  } else if (message.includes("informar o clima")) {
+    return structureWeatherMessage();
   } else {
     let messageConfiguration = new MessageConfiguration();
     const finalText = "Eu não sei o que você disse";
@@ -83,8 +83,4 @@ function configureAndUseTheVoiceBasedInAMessage(message) {
   voiceConfiguration.pitch = 1;
 
   readOutLoudAText(voiceConfiguration);
-}
-
-function readOutLoudAText(textToRead) {
-  return window.speechSynthesis.speak(textToRead);
 }
