@@ -1,22 +1,23 @@
 import generateTime from "./controllers/generateTimeController";
-import { generateAnHTMLElement } from "./controllers/generateHTMLController";
-import { listHTMLElements } from "./controllers/listHTMLElements";
-import { toggleClassNameByElement } from "./controllers/animateHTML";
+import { generateAnHTMLElement } from "./controllers/html-templates/generateHTMLController";
+import { listHTMLElements } from "./controllers/html-templates/listHTMLElements";
+import { toggleClassNameByElement } from "./controllers/html-templates/animateHTML";
+import readOutLoudAText from "./controllers/readText";
 
 import { saveConversation } from "./services/saveConversation";
 
 import MessageConfiguration from "./utils/messageConfiguration";
+import structureWeatherMessage from "./controllers/weatherController";
+
+import { voiceRecognition } from "./utils/voiceConfiguration";
+import { greetingsMessageByTime } from "./controllers/greetingsController";
+import { sentencesToSepakAutomatically } from "./utils/sentences";
 
 const buttonToTalk = document.querySelector("#talk-btn");
 const content = document.querySelector(".conversation");
 const checkboxToSave = document.querySelector(".save-conversation");
 
 const greetings = ["E aí Dev!", "Olá como está?", "E aí tudo bem!"];
-
-const selectedSpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition;
-
-const voiceRecognition = new selectedSpeechRecognition();
 
 listHTMLElements(content);
 
@@ -50,12 +51,18 @@ buttonToTalk.addEventListener("click", () => {
 function configureAndUseTheVoiceBasedInAMessage(message) {
   const voiceConfiguration = new SpeechSynthesisUtterance();
 
-  if (message.includes("Olá")) {
-    const finalText = greetings[Math.floor(Math.random() * greetings.length)];
+  if (
+    sentencesToSepakAutomatically.clientGreetings.filter(
+      (sentence) => sentence === message.toLowerCase()
+    )
+  ) {
+    const greetingsArrayByTime = greetingsMessageByTime();
+    const finalText =
+      greetingsArrayByTime[Math.floor(Math.random() * greetings.length)];
     let messageConfiguration = new MessageConfiguration();
     messageConfiguration.className = "robot-message";
     messageConfiguration.childs[0].textContent = finalText;
-    messageConfiguration.childs[1].textContent = generateTime();
+    messageConfiguration.childs[1].textContent = generateTime(true);
     const robotMessage = generateAnHTMLElement(messageConfiguration);
 
     content.appendChild(robotMessage);
@@ -63,6 +70,11 @@ function configureAndUseTheVoiceBasedInAMessage(message) {
     saveConversation(messageConfiguration, checkboxToSave);
 
     voiceConfiguration.text = finalText;
+  } else if (
+    message.includes("informar o clima") ||
+    message.includes("informar clima")
+  ) {
+    return structureWeatherMessage();
   } else {
     let messageConfiguration = new MessageConfiguration();
     const finalText = "Eu não sei o que você disse";
@@ -83,8 +95,4 @@ function configureAndUseTheVoiceBasedInAMessage(message) {
   voiceConfiguration.pitch = 1;
 
   readOutLoudAText(voiceConfiguration);
-}
-
-function readOutLoudAText(textToRead) {
-  return window.speechSynthesis.speak(textToRead);
 }

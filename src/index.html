@@ -53,14 +53,21 @@
         <i class="fas fa-trash-alt"></i>
         <p>Limpar conversa</p>
       </div>
-      <div class="github">
-        <i class="fab fa-github"></i>
-        <a href="https://github.com/Allan28818/Command-voice">Github</a>
-      </div>
-      <div class="linkedin">
-        <i class="fab fa-linkedin"></i>
-        <a href="">Linkedin</a>
-      </div>
+      <a href="https://github.com/Allan28818/Command-voice" target="_blank">
+        <div class="github">
+          <i class="fab fa-github"></i>
+          <p>Github</p>
+        </div>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/allan-julie-b535811b4/"
+        target="_blank"
+      >
+        <div class="linkedin">
+          <i class="fab fa-linkedin"></i>
+          <p>Linkedin</p>
+        </div>
+      </a>
     </div>
 
     <section class="conversation-elements">
@@ -75,18 +82,22 @@
         <label for="check">Save conversation?</label>
       </div>
 
-      <div class="tooltip-button">
-        <button class="talk" id="talk-btn" name="talk-btn">
-          <i class="fas fa-microphone-alt"></i>
-        </button>
-        <span class="tooltip-text">Click to talk</span>
-      </div>
-
       <div class="conversation"></div>
+
+      <div class="microphone-bar">
+        <div class="tooltip-button">
+          <button class="talk" id="talk-btn" name="talk-btn">
+            <i class="fas fa-microphone-alt"></i>
+          </button>
+          <span class="tooltip-text">Click to talk</span>
+        </div>
+      </div>
     </section>
 
+    <script src="./controllers/weatherController.js"></script>
+    <script src="./controllers/locationController.js"></script>
     <script src="./services/deleteConversation.js"></script>
-    <script src="./controllers/animateHTML.js"></script>
+    <script src="./controllers/html-templates/"></script>
     <script src="./index.js"></script>
   </body>
 </html>
