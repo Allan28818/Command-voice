@@ -24,11 +24,16 @@ const longitude = localStorage.getItem("longitude");
 const weatherConfiguration = new WeatherConfiguration();
 
 function structureWeatherMessage() {
-  fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=0771ea2bacc1808ed067fdad9f5aed1b&lang=pt_br&units=metric`
-  )
+  const urlToFetch =
+    "https://api.openweathermap.org/data/2.5/weather?lat=" +
+    latitude +
+    "&lon=" +
+    longitude +
+    "&appid=9d605350be1a49ff24363d4ee569bedb&lang=pt_br&units=metric";
+  fetch(urlToFetch)
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       const image = returnAttributeByClassName(
         "image-weather",
         weatherConfiguration.childs
@@ -105,7 +110,7 @@ function setElementProperties(data, elementsList) {
   image.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   image.alt = data.weather[0].description;
   title.textContent = `${data.name} - ${data.weather[0].description}`;
-  temperature.textContent = `Temperatura máxima ${formatedTemperatures.maxTemperature}° - Temperatura miníma ${formatedTemperatures.minTemperature}°`;
+  temperature.textContent = `Temperatura máxima ${formatedTemperatures.maxTemperature}° - Temperatura mínima ${formatedTemperatures.minTemperature}°`;
   feelsLike.textContent = `Sensação térmica ${formatedTemperatures.feelsLikeTemperature}°`;
   cloudsLevel.textContent = `Densidade de nuvens ${data.clouds.all}% de 100%`;
   windSpeed.textContent = `Velocidade do vento ${(
