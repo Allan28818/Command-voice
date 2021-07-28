@@ -20,6 +20,20 @@ export function generateAnHTMLElement(elementConfigurantion) {
       currentChild.setAttribute("alt", avaiableAlternativeText);
     }
 
+    if (child.eventListener) {
+      const { eventName, fatherElementInTheParams, method } =
+        child.eventListener;
+
+      currentChild.addEventListener(eventName, () => {
+        if (fatherElementInTheParams) {
+          method(fatherElement);
+          return;
+        }
+        method();
+        return;
+      });
+    }
+
     currentChild.classList.add(currentChildClass);
     currentChild.innerHTML = currentChildTextContent.toString().trim();
 

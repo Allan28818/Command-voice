@@ -5,7 +5,7 @@ import generateTime from "./generateTimeController";
 import { generateAnHTMLElement } from "./html-templates/generateHTMLController";
 import readOutLoudAText, {
   returnConfiguredVoice,
-} from "../controllers/readText";
+} from "./sentencesControllers/readText";
 
 const conversation = document.querySelector(".conversation");
 const checkboxToSave = document.querySelector(".save-conversation");
@@ -120,7 +120,7 @@ function setElementProperties(data, elementsList) {
 
   messageTime.textContent = generateTime();
 
-  const textToRead = `${data.name} - ${data.weather[0].description}. Temperatura máxima ${formatedTemperatures.maxTemperature}° - Temperatura miníma ${formatedTemperatures.minTemperature}°`;
+  const textToRead = `${data.name} - ${data.weather[0].description}. Temperatura máxima ${formatedTemperatures.maxTemperature}° - Temperatura miníma ${formatedTemperatures.minTemperature}°. Umidade realtiva do ar: ${data.main.humidity}`;
   const voiceConfiguration = returnConfiguredVoice(textToRead);
   readOutLoudAText(voiceConfiguration);
 }

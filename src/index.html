@@ -28,13 +28,13 @@
         <h2>Excluir</h2>
         <img
           class="trash-can-img"
-          src="/src/assets/trash-can.png"
-          alt="Lixeira - excluir"
+          src="/public/images/trash-can.png"
+          alt="Trash can - delete"
         />
-        <p>Tem certeza que deseja excluir suas conversas?</p>
+        <p>Do you really want to delete all your messages?</p>
         <ul>
-          <li><button class="delete">Excluir</button></li>
-          <li><button class="cancel">Cancelar</button></li>
+          <li><button class="delete">Delete</button></li>
+          <li><button class="cancel">Cancel</button></li>
         </ul>
       </div>
     </div>
@@ -51,7 +51,7 @@
       <hr />
       <div class="clean-storage">
         <i class="fas fa-trash-alt"></i>
-        <p>Limpar conversa</p>
+        <p>Delete conversation</p>
       </div>
       <a href="https://github.com/Allan28818/Command-voice" target="_blank">
         <div class="github">
@@ -70,7 +70,7 @@
       </a>
     </div>
 
-    <section class="conversation-elements">
+    <section class="conversation-elements" id="conversation-father">
       <div class="wrapper">
         <input
           type="checkbox"
@@ -85,19 +85,19 @@
       <div class="conversation"></div>
 
       <div class="microphone-bar">
-        <div class="tooltip-button">
-          <button class="talk" id="talk-btn" name="talk-btn">
-            <i class="fas fa-microphone-alt"></i>
-          </button>
-          <span class="tooltip-text">Click to talk</span>
-        </div>
+        <button class="talk" id="talk-btn" name="talk-btn">
+          <i class="fas fa-microphone-alt"></i>
+        </button>
       </div>
     </section>
 
     <script src="./controllers/weatherController.js"></script>
     <script src="./controllers/locationController.js"></script>
+    <script src="./controllers/html-templates/animateHTML.js"></script>
+    <script src="./controllers/sentencesControllers/judgeTheMessageByTheSentence.js"></script>
+
     <script src="./services/deleteConversation.js"></script>
-    <script src="./controllers/html-templates/"></script>
+
     <script src="./index.js"></script>
   </body>
 </html>

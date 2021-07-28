@@ -19,6 +19,12 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    fallback: {
+      util: false,
+    },
+  },
+
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",

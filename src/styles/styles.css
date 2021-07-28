@@ -395,7 +395,7 @@ body {
 
 .conversation-elements {
   width: 31.25rem;
-  min-height: 100%;
+  min-height: 100vh;
   height: 100%;
   display: block;
   -webkit-box-pack: center;
@@ -477,13 +477,7 @@ body {
   margin-top: 0.625rem;
 }
 
-.conversation-elements .microphone-bar .tooltip-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.conversation-elements .microphone-bar .tooltip-button .talk {
+.conversation-elements .microphone-bar .talk {
   max-width: 6.25rem;
   min-width: 5rem;
   height: 3.125rem;
@@ -511,7 +505,7 @@ body {
   bottom: 0;
 }
 
-.conversation-elements .microphone-bar .tooltip-button .talk .fas.fa-microphone-alt {
+.conversation-elements .microphone-bar .talk .fas.fa-microphone-alt {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -523,16 +517,16 @@ body {
           align-items: center;
 }
 
-.conversation-elements .microphone-bar .tooltip-button .talk:hover {
+.conversation-elements .microphone-bar .talk:hover {
   -webkit-box-shadow: 0px 0px 10px 0px #252525b7;
           box-shadow: 0px 0px 10px 0px #252525b7;
 }
 
-.conversation-elements .microphone-bar .tooltip-button .talk:active {
+.conversation-elements .microphone-bar .talk:active {
   background: #540b79;
 }
 
-.conversation-elements .microphone-bar .tooltip-button .talk.talking {
+.conversation-elements .microphone-bar .talk.talking {
   -webkit-animation: "pulse" 0.7s infinite;
           animation: "pulse" 0.7s infinite;
 }
@@ -553,35 +547,6 @@ body {
   to {
     opacity: 0.3;
   }
-}
-
-.conversation-elements .microphone-bar .tooltip-button .tooltip-text {
-  opacity: 0;
-  width: 7.5rem;
-  height: 3.125rem;
-  background: #000000b0;
-  color: #fff;
-  text-align: center;
-  border-radius: 0.375rem;
-  padding: 0.3125rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  z-index: 2;
-  font-family: "Baloo", sans-serif;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  margin-left: 18.75rem;
-}
-
-.conversation-elements .microphone-bar .tooltip-button:hover .tooltip-text {
-  opacity: 1;
 }
 
 .conversation-elements .conversation .my-message,
@@ -716,5 +681,48 @@ body {
 
 .conversation-elements .conversation .weather-message .cloudsLevel {
   margin-bottom: 0.3125rem;
+}
+
+.no-messages-wrapper {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-top: 1.25rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid #d63031;
+  background: #ff7675;
+  color: #fff;
+}
+
+.no-messages-wrapper h1 {
+  font-size: clamp(1.25rem, 1.5625rem);
+  font-family: "Poppins", sans-serif;
+  display: block;
+  text-align: center;
+}
+
+.no-messages-wrapper p {
+  font-size: clamp(0.5rem, 0.9375rem, 1.25rem);
+  font-family: "Poppins", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.no-messages-wrapper .close-no-messages {
+  font-size: clamp(1rem, 1.25rem, converToRem(25rem));
+  font-weight: bolder;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  cursor: pointer;
+  padding-right: 0.625rem;
 }
 /*# sourceMappingURL=styles.css.map */
