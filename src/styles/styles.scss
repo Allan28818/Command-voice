@@ -311,7 +311,7 @@ body {
 
 .conversation-elements {
   width: convertToRem(500rem);
-  min-height: 100%;
+  min-height: 100vh;
   height: 100%;
   display: block;
   justify-content: center;
@@ -374,78 +374,51 @@ body {
     align-items: flex-end;
     margin-top: convertToRem(10rem);
 
-    .tooltip-button {
-      display: flex;
-      .talk {
-        max-width: convertToRem(100rem);
-        min-width: convertToRem(80rem);
-        height: convertToRem(50rem);
-        border: none;
-        border-radius: convertToRem(20rem);
-        background: #c56cf0;
-        display: block;
-        justify-content: center;
-        align-items: center;
-        font-family: "Baloo", sans-serif;
-        font-weight: bolder;
-        text-transform: uppercase;
-        color: #fff;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin: auto;
-        position: fixed;
-        right: 0;
-        left: 0;
-        bottom: 0;
+    .talk {
+      max-width: convertToRem(100rem);
+      min-width: convertToRem(80rem);
+      height: convertToRem(50rem);
+      border: none;
+      border-radius: convertToRem(20rem);
+      background: #c56cf0;
+      display: block;
+      justify-content: center;
+      align-items: center;
+      font-family: "Baloo", sans-serif;
+      font-weight: bolder;
+      text-transform: uppercase;
+      color: #fff;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: auto;
+      position: fixed;
+      right: 0;
+      left: 0;
+      bottom: 0;
 
-        .fas.fa-microphone-alt {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        &:hover {
-          box-shadow: 0px 0px 10px 0px #252525b7;
-        }
-
-        &:active {
-          background: #540b79;
-        }
-      }
-      .talk.talking {
-        animation: "pulse" 0.7s infinite;
-
-        @keyframes pulse {
-          from {
-            opacity: 1;
-          }
-          to {
-            opacity: 0.3;
-          }
-        }
-      }
-
-      .tooltip-text {
-        opacity: 0;
-        width: convertToRem(120rem);
-        height: convertToRem(50rem);
-        background: #000000b0;
-        color: #fff;
-        text-align: center;
-        border-radius: convertToRem(6rem);
-        padding: convertToRem(5rem) 0;
+      .fas.fa-microphone-alt {
         display: flex;
-        align-items: center;
         justify-content: center;
-        z-index: 2;
-        font-family: "Baloo", sans-serif;
-        transition: all 0.5s;
-        margin-left: convertToRem(300rem);
+        align-items: center;
       }
 
       &:hover {
-        .tooltip-text {
+        box-shadow: 0px 0px 10px 0px #252525b7;
+      }
+
+      &:active {
+        background: #540b79;
+      }
+    }
+    .talk.talking {
+      animation: "pulse" 0.7s infinite;
+
+      @keyframes pulse {
+        from {
           opacity: 1;
+        }
+        to {
+          opacity: 0.3;
         }
       }
     }
@@ -553,5 +526,40 @@ body {
         margin-bottom: convertToRem(5rem);
       }
     }
+  }
+}
+
+.no-messages-wrapper {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-top: convertToRem(20rem);
+  padding: convertToRem(10rem) convertToRem(20rem);
+  border-radius: 10px;
+  border: 1px solid #d63031;
+  background: #ff7675;
+  color: #fff;
+
+  h1 {
+    font-size: clamp(convertToRem(20rem), convertToRem(25rem));
+    font-family: "Poppins", sans-serif;
+    display: block;
+    text-align: center;
+  }
+
+  p {
+    font-size: clamp(0.5rem, convertToRem(15rem), convertToRem(20rem));
+    font-family: "Poppins", sans-serif;
+    display: flex;
+  }
+
+  .close-no-messages {
+    font-size: clamp(1rem, convertToRem(20rem), converToRem(25rem));
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    padding-right: convertToRem(10rem);
   }
 }
