@@ -6,14 +6,13 @@ const parsedConversationData = conversationData
   ? Array.from(conversationData)
   : false;
 
-function listHTMLElements(fatherElement) {
+function listHTMLElements(fatherElement, noMessagesWrapper = null) {
   if (!!parsedConversationData.length) {
     conversationData.forEach((htmlElementConfiguration) => {
       const myMessage = generateAnHTMLElement(htmlElementConfiguration);
-      const emptyMessage = document.querySelector(".no-messages-wrapper");
 
-      if (emptyMessage) {
-        fatherElement.removeChild(emptyMessage);
+      if (noMessagesWrapper) {
+        noMessagesWrapper.classList.add("hidden");
       }
 
       fatherElement.appendChild(myMessage);
@@ -22,7 +21,8 @@ function listHTMLElements(fatherElement) {
     const noMessagesConfiguration = new NoMessagesConfiguration();
     const emptyMessage = generateAnHTMLElement(noMessagesConfiguration);
 
-    fatherElement.appendChild(emptyMessage);
+    noMessagesWrapper.appendChild(emptyMessage);
+    noMessagesWrapper.classList.remove("hidden");
   }
   return;
 }

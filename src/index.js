@@ -10,15 +10,13 @@ import MessageConfiguration from "./utils/messageConfiguration";
 import { voiceRecognition } from "./utils/voiceConfiguration";
 
 const buttonToTalk = document.querySelector("#talk-btn");
-const conversationElementsFather = document.querySelector(
-  "#conversation-father"
-);
 const conversation = document.querySelector(".conversation");
+const noMessagesWrapper = document.querySelector(".no-messages-container");
 const checkboxToSave = document.querySelector(".save-conversation");
-listHTMLElements(conversation);
+
+listHTMLElements(conversation, noMessagesWrapper);
 
 voiceRecognition.onstart = () => {
-  console.log("voice is activated, you can microphonee");
   toggleClassNameByElement([buttonToTalk], ["talking"]);
 };
 
@@ -45,10 +43,8 @@ buttonToTalk.addEventListener("click", () => {
 });
 
 function configureAndUseTheVoiceBasedInAMessage(message) {
-  const emptyMessage = document.querySelector(".no-message-wrapper");
-
-  if (emptyMessage && message)
-    conversationElementsFather.removeChild(emptyMessage);
-
+  if (noMessagesWrapper) {
+    noMessagesWrapper.classList.add("hidden");
+  }
   judgeTheMessageByTheSentence(message);
 }

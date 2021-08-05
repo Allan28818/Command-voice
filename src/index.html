@@ -20,6 +20,10 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="/__/firebase/8.8.1/firebase-app.js"></script>
+
+    <script src="/__/firebase/init.js"></script>
+
     <title>Command Voice | By Allan Julie</title>
   </head>
   <body>
@@ -82,7 +86,9 @@
         <label for="check">Save conversation?</label>
       </div>
 
-      <div class="conversation"></div>
+      <div class="conversation">
+        <div class="no-messages-container"></div>
+      </div>
 
       <div class="microphone-bar">
         <button class="talk" id="talk-btn" name="talk-btn">
