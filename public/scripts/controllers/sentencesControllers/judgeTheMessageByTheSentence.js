@@ -1,15 +1,15 @@
-import generateTime from "../generateTimeController";
-import { greetingsMessageByTime } from "./greetingsController";
-import { generateAnHTMLElement } from "../html-templates/generateHTMLController";
-import structureWeatherMessage from "../weatherController";
-import { configureVoice } from "../voiceConfigurations/configureVoice";
-import { verifyIfThereIsAKeyValue } from "./verifyIfThereIsAKeyValue";
+import generateTime from "../generateTimeController.js";
+import { greetingsMessageByTime } from "./greetingsController.js";
+import { generateAnHTMLElement } from "../html-templates/generateHTMLController.js";
+import structureWeatherMessage from "../weatherController.js";
+import { configureVoice } from "../voiceConfigurations/configureVoice.js";
+import { verifyIfThereIsAKeyValue } from "./verifyIfThereIsAKeyValue.js";
 
-import { saveConversation } from "../../services/saveConversation";
+import { saveConversation } from "../../services/saveConversation.js";
 
-import { sentencesToSepakAutomatically } from "../../utils/sentences";
-import MessageConfiguration from "../../utils/messageConfiguration";
-import readOutLoudAText from "./readText";
+import { sentencesToSepakAutomatically } from "../../utils/sentences.js";
+import MessageConfiguration from "../../utils/messageConfiguration.js";
+import readOutLoudAText from "./readText.js";
 
 const conversation = document.querySelector(".conversation");
 const checkboxToSave = document.querySelector(".save-conversation");

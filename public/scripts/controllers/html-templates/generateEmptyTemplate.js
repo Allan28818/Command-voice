@@ -1,4 +1,4 @@
-import { generateAnHTMLElement } from "./generateHTMLController";
+import { generateAnHTMLElement } from "./generateHTMLController.js";
 
 function generateEmptyTemplate(elementConfiguration) {
   if (elementConfiguration) {

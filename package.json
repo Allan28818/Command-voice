@@ -2,10 +2,12 @@
   "name": "command-voice",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
+  "author": "Allan Julie Fontes de Oliveira",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --hot --mode development",
+    "server": "nodemon .",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -13,7 +15,6 @@
     "url": "git+https://github.com/Allan28818/Command-voice.git"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Allan28818/Command-voice/issues"
@@ -24,8 +25,14 @@
     "@babel/preset-env": "^7.14.2",
     "babel-loader": "^8.2.2",
     "html-webpack-plugin": "^5.3.1",
+    "nodemon": "^2.0.12",
     "webpack": "^5.47.0",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^4.0.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "firebase": "^8.9.0"
   }
 }

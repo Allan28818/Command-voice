@@ -1,13 +1,13 @@
-import generateTime from "./controllers/generateTimeController";
-import { generateAnHTMLElement } from "./controllers/html-templates/generateHTMLController";
-import { listHTMLElements } from "./controllers/html-templates/listHTMLElements";
-import { toggleClassNameByElement } from "./controllers/html-templates/animateHTML";
-import judgeTheMessageByTheSentence from "./controllers/sentencesControllers/judgeTheMessageByTheSentence";
+import generateTime from "./controllers/generateTimeController.js";
+import { generateAnHTMLElement } from "./controllers/html-templates/generateHTMLController.js";
+import { listHTMLElements } from "./controllers/html-templates/listHTMLElements.js";
+import { toggleClassNameByElement } from "./controllers/html-templates/animateHTML.js";
+import judgeTheMessageByTheSentence from "./controllers/sentencesControllers/judgeTheMessageByTheSentence.js";
 
-import { saveConversation } from "./services/saveConversation";
+import { saveConversation } from "./services/saveConversation.js";
 
-import MessageConfiguration from "./utils/messageConfiguration";
-import { voiceRecognition } from "./utils/voiceConfiguration";
+import MessageConfiguration from "./utils/messageConfiguration.js";
+import { voiceRecognition } from "./utils/voiceConfiguration.js";
 
 const buttonToTalk = document.querySelector("#talk-btn");
 const conversation = document.querySelector(".conversation");

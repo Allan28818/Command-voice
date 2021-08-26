@@ -1,4 +1,4 @@
-import { toggleClassNameByElement } from "../controllers/html-templates/animateHTML";
+import { toggleClassNameByElement } from "../controllers/html-templates/animateHTML.js";
 
 function NoMessagesConfiguration() {
   this.elementName = "div";
