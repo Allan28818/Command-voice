@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
     <script
       src="https://kit.fontawesome.com/4bae6c4864.js"
       crossorigin="anonymous"
@@ -24,7 +24,7 @@
 
     <script src="/__/firebase/init.js"></script>
 
-    <title>Command Voice | By Allan Julie</title>
+    <title>Robot Speaker | By Allan Julie</title>
   </head>
   <body>
     <div class="confirm-delete hidden">
@@ -32,7 +32,7 @@
         <h2>Excluir</h2>
         <img
           class="trash-can-img"
-          src="/public/images/trash-can.png"
+          src="/images/trash-can.png"
           alt="Trash can - delete"
         />
         <p>Do you really want to delete all your messages?</p>
@@ -51,7 +51,7 @@
       <h1 id="page title">Command voice</h1>
     </nav>
     <div class="menu-opened hidden">
-      <h3>Command voice</h3>
+      <h3>Robot Speaker</h3>
       <hr />
       <div class="clean-storage">
         <i class="fas fa-trash-alt"></i>
@@ -97,13 +97,28 @@
       </div>
     </section>
 
-    <script src="./controllers/weatherController.js"></script>
-    <script src="./controllers/locationController.js"></script>
-    <script src="./controllers/html-templates/animateHTML.js"></script>
-    <script src="./controllers/sentencesControllers/judgeTheMessageByTheSentence.js"></script>
+    <script src="/scripts/index.js" type="module"></script>
 
-    <script src="./services/deleteConversation.js"></script>
+    <script
+      src="/scripts/controllers/weatherController.js"
+      type="module"
+    ></script>
+    <script
+      src="/scripts/controllers/locationController.js"
+      type="module"
+    ></script>
+    <script
+      src="/scripts/controllers/html-templates/animateHTML.js"
+      type="module"
+    ></script>
+    <script
+      src="/scripts/controllers/sentencesControllers/judgeTheMessageByTheSentence.js"
+      type="module"
+    ></script>
 
-    <script src="./index.js"></script>
+    <script
+      src="/scripts/services/deleteConversation.js"
+      type="module"
+    ></script>
   </body>
 </html>

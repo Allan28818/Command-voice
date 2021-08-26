@@ -1,4 +1,4 @@
-import { conversationData } from "../utils/conversationData";
+import { conversationData } from "../utils/conversationData.js";
 
 function saveConversation(messageToSave, htmlElement) {
   localStorage.setItem("conversation", null);

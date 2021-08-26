@@ -1,11 +1,11 @@
-import { saveConversation } from "../services/saveConversation";
-import WeatherConfiguration from "../utils/weatherConfiguration";
+import { saveConversation } from "../services/saveConversation.js";
+import WeatherConfiguration from "../utils/weatherConfiguration.js";
 
-import generateTime from "./generateTimeController";
-import { generateAnHTMLElement } from "./html-templates/generateHTMLController";
+import generateTime from "./generateTimeController.js";
+import { generateAnHTMLElement } from "./html-templates/generateHTMLController.js";
 import readOutLoudAText, {
   returnConfiguredVoice,
-} from "./sentencesControllers/readText";
+} from "./sentencesControllers/readText.js";
 
 const conversation = document.querySelector(".conversation");
 const checkboxToSave = document.querySelector(".save-conversation");

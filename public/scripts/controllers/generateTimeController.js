@@ -1,4 +1,4 @@
-import { sentencesToSepakAutomatically } from "../utils/sentences";
+import { sentencesToSepakAutomatically } from "../utils/sentences.js";
 
 const generateTime = (emoticonType = false) => {
   const date = new Date();

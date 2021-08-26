@@ -1,4 +1,4 @@
-import { sentencesToSepakAutomatically } from "../../utils/sentences";
+import { sentencesToSepakAutomatically } from "../../utils/sentences.js";
 
 export function greetingsMessageByTime() {
   const currentTime = new Date();
