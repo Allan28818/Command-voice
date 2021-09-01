@@ -4,20 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/login.css" />
     <title>Robot Speaker | Login</title>
   </head>
   <body>
-    <nav>
+    <nav class="header-title">
       <h1>Robot Speaker</h1>
     </nav>
 
     <div class="login-wrapper">
-      <h3>Make your login!</h3>
-      <form action="" method="post">
-        <input type="text" placeholder="Type your email" />
-        <input type="password" placeholder="Type your password" />
-        <button type="submit">Login</button>
-      </form>
+      <h3 class="title">Make your login!</h3>
+      <div class="form-wrapper">
+        <form action="" method="post" class="form">
+          <input type="email" placeholder="Type your email" />
+          <input type="password" placeholder="Type your password" />
+          <button type="submit">Login</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
