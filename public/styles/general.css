@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #4b4b4b;
+}
+
+::-webkit-scrollbar {
+  width: convertToRem(20rem);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff11;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-radius: 50px;
+  border: 0.5px solid #ffffff8a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff8a;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+/*# sourceMappingURL=general.css.map */

@@ -5,7 +5,7 @@ import structureWeatherMessage from "../weatherController.js";
 import { configureVoice } from "../voiceConfigurations/configureVoice.js";
 import { verifyIfThereIsAKeyValue } from "./verifyIfThereIsAKeyValue.js";
 
-import { saveConversation } from "../../services/saveConversation.js";
+import { saveConversation } from "../../services/saveLocalConversation.js";
 
 import { sentencesToSepakAutomatically } from "../../utils/sentences.js";
 import MessageConfiguration from "../../utils/messageConfiguration.js";

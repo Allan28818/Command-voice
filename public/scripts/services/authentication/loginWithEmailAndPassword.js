@@ -1,6 +1,6 @@
-import { auth } from "../../config/firebase.js";
+const auth = require("../../firebaseConfig/firebase.js").auth;
 
-export async function loginWithEmailAndPassword(email, password) {
+async function loginWithEmailAndPassword(email, password) {
   try {
     const response = await auth.signInWithEmailAndPassword(email, password);
 
@@ -17,3 +17,7 @@ export async function loginWithEmailAndPassword(email, password) {
 
   return { message: "Login realizado com sucesso!" };
 }
+
+module.exports = {
+  loginWithEmailAndPassword,
+};

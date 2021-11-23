@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --hot --mode development",
-    "server": "nodemon .",
+    "server": "parcel src/views/index.ejs && nodemon .",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -26,13 +26,20 @@
     "babel-loader": "^8.2.2",
     "html-webpack-plugin": "^5.3.1",
     "nodemon": "^2.0.12",
+    "parcel-bundler": "^1.12.5",
     "webpack": "^5.47.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
+    "axios": "^0.21.4",
+    "css-loader": "^6.4.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "firebase": "^8.9.0"
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^6.2.0",
+    "firebase": "^8.9.0",
+    "leaflet": "^1.7.1",
+    "style-loader": "^3.3.0"
   }
 }
