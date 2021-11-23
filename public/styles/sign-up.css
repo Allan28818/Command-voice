@@ -1,34 +1,39 @@
+body {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
 body::before {
   content: "";
-  display: inline-block;
-  margin-right: 100px;
-  width: 0;
-  height: 0;
-  border-left: clamp(40px, 100px, 200px) solid transparent;
-  border-right: clamp(80px, 200px, 400px) solid transparent;
-  border-bottom: clamp(80px, 200px, 400px) solid #7d5fff;
+  display: block;
   position: absolute;
+  width: clamp(70px, 450px, 600px);
+  height: clamp(70px, 450px, 600px);
+  border-radius: 50%;
+  background: #7d5fff;
+  position: absolute;
+  bottom: 10%;
+  left: -10%;
   z-index: -1;
-  bottom: 30%;
-  left: 20%;
-  -webkit-transform: rotate(30deg);
-          transform: rotate(30deg);
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
 }
 
 body::after {
   content: "";
-  display: block;
+  width: 0;
+  height: 0;
+  display: inline-block;
   position: absolute;
-  width: clamp(50px, 100px, 500px);
-  height: clamp(50px, 100px, 500px);
-  border-radius: 30px;
-  background: #7d5fff;
+  border-top: 100px solid transparent;
+  border-right: 200px solid #7d5fff;
+  border-left: 100px solid transparent;
   position: absolute;
-  top: 20%;
-  right: 40%;
+  bottom: 12%;
+  right: 20%;
   z-index: -1;
-  -webkit-transform: rotate(10deg);
-          transform: rotate(10deg);
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
 }
 
 ::-webkit-scrollbar {
@@ -48,10 +53,27 @@ body::after {
   border: none;
 }
 
-.login-wrapper {
+@media (max-width: 730px) {
+  body:after {
+    border-top: 75px solid transparent;
+    border-right: 150px solid #7d5fff;
+    border-left: 75px solid transparent;
+    top: 20%;
+    -webkit-transform: rotate(-50deg);
+            transform: rotate(-50deg);
+  }
+  body::before {
+    width: clamp(40px, 280px, 480px);
+    height: clamp(40px, 280px, 480px);
+    bottom: 15%;
+    left: -6.5%;
+  }
+}
+
+.sign-up-wrapper {
   min-width: 200px;
   width: 50%;
-  height: 25rem;
+  height: 31.25rem;
   background: #7e7d7db2;
   border-radius: 1.875rem;
   border: 1px solid #7c5fffdc;
@@ -65,25 +87,25 @@ body::after {
       -ms-flex-align: center;
           align-items: center;
   margin: auto;
-  margin-top: 5%;
+  margin-top: 3.5%;
   padding: 1.875rem;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
 }
 
-.login-wrapper .title {
+.sign-up-wrapper .title {
   font-size: clamp(20px, 5px, 10%);
   color: #fafafa;
   font-family: "Poppins", sans-serif;
   text-align: center;
 }
 
-.login-wrapper .form-wrapper {
+.sign-up-wrapper .form-wrapper {
   display: block;
   width: 100%;
 }
 
-.login-wrapper .form-wrapper input {
+.sign-up-wrapper .form-wrapper input {
   width: 100%;
   min-width: 9.375rem;
   height: 50px;
@@ -100,11 +122,11 @@ body::after {
   transition: ease 0.5s focus;
 }
 
-.login-wrapper .form-wrapper input::-webkit-input-placeholder {
+.sign-up-wrapper .form-wrapper input::-webkit-input-placeholder {
   color: #c0bdbd;
 }
 
-.login-wrapper .form-wrapper input:focus {
+.sign-up-wrapper .form-wrapper input:focus {
   border-bottom: 3px solid #7d5fff;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -113,13 +135,13 @@ body::after {
   color: #fff;
 }
 
-.login-wrapper .form-wrapper input:hover {
+.sign-up-wrapper .form-wrapper input:hover {
   -webkit-transition: ease 0.3s;
   transition: ease 0.3s;
   opacity: 0.5;
 }
 
-.login-wrapper .form-wrapper button[type="submit"] {
+.sign-up-wrapper .form-wrapper button[type="submit"] {
   width: clamp(40%, 50%, 80%);
   min-width: 6.25rem;
   height: 2.5rem;
@@ -147,23 +169,23 @@ body::after {
   transition: all 0.4s ease;
 }
 
-.login-wrapper .form-wrapper button[type="submit"]:hover {
+.sign-up-wrapper .form-wrapper button[type="submit"]:hover {
   opacity: 0.5;
 }
 
-.login-wrapper .form-wrapper button[type="submit"]:active {
+.sign-up-wrapper .form-wrapper button[type="submit"]:active {
   border: 2px solid #fff;
   opacity: 0.3;
 }
 
-.login-wrapper .form-wrapper .auth-actions {
+.sign-up-wrapper .form-wrapper .auth-actions {
   display: block;
   width: 100%;
   height: auto;
   margin-top: 0.625rem;
 }
 
-.login-wrapper .form-wrapper .auth-actions a {
+.sign-up-wrapper .form-wrapper .auth-actions a {
   font-size: clamp(0.84375rem, 1.03125rem, converToRem(19rem));
   font-family: "Baloo", sans-serif;
   font-weight: 600;
@@ -173,21 +195,21 @@ body::after {
   color: #fff;
 }
 
-.login-wrapper .form-wrapper .auth-actions a:hover {
+.sign-up-wrapper .form-wrapper .auth-actions a:hover {
   opacity: 1;
   -webkit-text-decoration-style: dashed;
           text-decoration-style: dashed;
 }
 
-.login-wrapper .form-wrapper .auth-actions a:nth-child(1):hover {
+.sign-up-wrapper .form-wrapper .auth-actions a:nth-child(1):hover {
   color: #8f77fa;
   -webkit-text-decoration-color: #8f77fa;
           text-decoration-color: #8f77fa;
 }
 
-.login-wrapper .form-wrapper .auth-actions a:nth-child(2):hover {
+.sign-up-wrapper .form-wrapper .auth-actions a:nth-child(2):hover {
   color: #2ecc71;
   -webkit-text-decoration-color: #2ecc71;
           text-decoration-color: #2ecc71;
 }
-/*# sourceMappingURL=login.css.map */
+/*# sourceMappingURL=sign-up.css.map */

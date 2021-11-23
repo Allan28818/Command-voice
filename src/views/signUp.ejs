@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robot speaker | Sign Up</title>
+
+    <link rel="stylesheet" href="/styles/general.css" />
+    <link rel="stylesheet" href="/styles/parts.css" />
+    <link rel="stylesheet" href="/styles/sign-up.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  </head>
+  <body>
+    <%- include("parts/simpleHeader")%>
+
+    <div class="sign-up-wrapper">
+      <h3 class="title">Make your sign up!</h3>
+      <div class="form-wrapper">
+        <form class="form" action="/sign-up" method="POST">
+          <input
+            type="text"
+            placeholder="Type your first name"
+            name="firstName"
+            aria-label="First name"
+            required
+            aria-required="true"
+            oninvalid="handleInvalid(event, 'First name is required!')"
+            oninput="handleInvalid(event)"
+          />
+          <input
+            type="text"
+            placeholder="Type your last name"
+            name="lastName"
+            aria-label="Last name"
+            required
+            aria-required="true"
+            oninvalid="handleInvalid(event, 'Last name is required!')"
+            oninput="handleInvalid(event)"
+          />
+          <input
+            type="email"
+            placeholder="Type your email"
+            name="email"
+            aria-label="Email"
+            required
+            aria-required="true"
+            oninvalid="handleInvalid(event, 'E-mail is required!')"
+            oninput="handleInvalid(event)"
+          />
+          <input
+            type="password"
+            placeholder="Type your password"
+            name="password"
+            aria-label="Password"
+            required
+            aria-required="true"
+            oninvalid="handleInvalid(event, 'The password is required!')"
+            oninput="handleInvalid(event)"
+            minlength="8"
+          />
+          <button type="submit">Sign Up</button>
+        </form>
+        <div class="auth-actions">
+          <a href="/reset-password">Forget the password?</a>
+          <a href="/login">Login</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="/scripts/controllers/authentication/verifyFormController.js"></script>
+  </body>
+</html>

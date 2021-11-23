@@ -1,0 +1,26 @@
+@import url("./_functions.scss");
+.header-title {
+  width: 100%;
+  min-height: convertToRem(70rem);
+  max-height: convertToRem(100rem);
+  padding-top: 2%;
+  padding-bottom: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #7d5fff;
+}
+
+.header-title h1 {
+  font-size: clamp(convertToRem(30rem), convertToRem(35rem), convertToRem(40rem));
+  color: #fff;
+  font-family: "Baloo", sans-serif;
+  cursor: default;
+}
+/*# sourceMappingURL=parts.css.map */

@@ -1,4 +1,4 @@
-import { saveConversation } from "../services/saveConversation.js";
+import { saveConversation } from "../services/saveLocalConversation.js";
 import WeatherConfiguration from "../utils/weatherConfiguration.js";
 
 import generateTime from "./generateTimeController.js";
@@ -10,13 +10,17 @@ import readOutLoudAText, {
 const conversation = document.querySelector(".conversation");
 const checkboxToSave = document.querySelector(".save-conversation");
 
-navigator.geolocation.watchPosition(({ coords }) => {
-  const { latitude } = coords;
-  const { longitude } = coords;
+window.onload = () => {
+  navigator.geolocation.watchPosition(({ coords }) => {
+    const { latitude } = coords;
+    const { longitude } = coords;
 
-  localStorage.setItem("longitude", longitude);
-  localStorage.setItem("latitude", latitude);
-});
+    localStorage.setItem("longitude", longitude);
+    localStorage.setItem("latitude", latitude);
+  });
+
+  return null;
+};
 
 const latitude = localStorage.getItem("latitude");
 const longitude = localStorage.getItem("longitude");

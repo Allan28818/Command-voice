@@ -1,35 +1,37 @@
 @import "./functions";
 
 body {
+  transition: all 0.4s ease;
+
   &::before {
     content: "";
-    display: inline-block;
-    margin-right: 100px;
-    width: 0;
-    height: 0;
-    border-left: clamp(40px, 100px, 200px) solid transparent;
-    border-right: clamp(80px, 200px, 400px) solid transparent;
-    border-bottom: clamp(80px, 200px, 400px) solid #7d5fff;
+    display: block;
     position: absolute;
+    width: clamp(70px, 450px, 600px);
+    height: clamp(70px, 450px, 600px);
+    border-radius: 50%;
+    background: #7d5fff;
+    position: absolute;
+    bottom: 10%;
+    left: -10%;
     z-index: -1;
-    bottom: 30%;
-    left: 20%;
-    transform: rotate(30deg);
+    transform: rotate(10deg);
   }
 
   &::after {
     content: "";
-    display: block;
+    width: 0;
+    height: 0;
+    display: inline-block;
     position: absolute;
-    width: clamp(50px, 100px, 500px);
-    height: clamp(50px, 100px, 500px);
-    border-radius: 30px;
-    background: #7d5fff;
+    border-top: 100px solid transparent;
+    border-right: 200px solid #7d5fff;
+    border-left: 100px solid transparent;
     position: absolute;
-    top: 20%;
-    right: 40%;
+    bottom: 12%;
+    right: 20%;
     z-index: -1;
-    transform: rotate(10deg);
+    transform: rotate(30deg);
   }
 }
 
@@ -49,10 +51,29 @@ body {
   }
 }
 
-.login-wrapper {
+@media (max-width: 730px) {
+  body {
+    &:after {
+      border-top: 75px solid transparent;
+      border-right: 150px solid #7d5fff;
+      border-left: 75px solid transparent;
+      top: 20%;
+      transform: rotate(-50deg);
+    }
+
+    &::before {
+      width: clamp(40px, 280px, 480px);
+      height: clamp(40px, 280px, 480px);
+      bottom: 15%;
+      left: -6.5%;
+    }
+  }
+}
+
+.sign-up-wrapper {
   min-width: 200px;
   width: 50%;
-  height: convertToRem(400rem);
+  height: convertToRem(500rem);
   background: #7e7d7db2;
   border-radius: convertToRem(30rem);
   border: 1px solid #7c5fffdc;
@@ -61,7 +82,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 5%;
+  margin-top: 3.5%;
   padding: convertToRem(30rem);
   backdrop-filter: blur(2px);
 

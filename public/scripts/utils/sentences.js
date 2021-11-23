@@ -14,7 +14,7 @@ export const sentencesToSepakAutomatically = {
     morning: ["Bom dia!", "Tenha um ótimo dia!", "O dia será incrível!"],
     afternoon: [
       "Boa tarde!",
-      "Oi boa tade, tudo bem?",
+      "Oi boa tarde, tudo bem?",
       "A tarde está agradável não é mesmo?",
       "Olá! Como está indo a sua tarde?",
       "No que posso te ajudar nessa bela tarde?",

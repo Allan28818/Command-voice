@@ -1,36 +1,5 @@
 @import "./functions";
 
-* {
-  padding: 0;
-  margin: 0;
-  outline: none;
-  box-sizing: border-box;
-}
-
-body {
-  background: #4b4b4b;
-}
-
-::-webkit-scrollbar {
-  width: convertToRem(20rem);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ffffff11;
-  transition: all 0.4s ease;
-  border-radius: 50px;
-  border: 0.5px solid #ffffff8a;
-
-  &:hover {
-    background: #ffffff8a;
-    border: none;
-  }
-}
-
-.hidden {
-  display: none;
-}
-
 .header-title {
   width: 100%;
   min-height: convertToRem(70rem);

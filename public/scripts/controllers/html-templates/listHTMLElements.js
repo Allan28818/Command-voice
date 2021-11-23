@@ -1,7 +1,9 @@
 import { generateAnHTMLElement } from "./generateHTMLController.js";
 import NoMessagesConfiguration from "../../utils/noMessagesConfiguration.js";
 
-const conversationData = JSON.parse(localStorage.getItem("conversation"));
+const conversationData = JSON.parse(
+  localStorage.getItem("conversation") || "[]"
+);
 const parsedConversationData = conversationData
   ? Array.from(conversationData)
   : false;
